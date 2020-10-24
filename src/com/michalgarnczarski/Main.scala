@@ -3,7 +3,7 @@ package com.michalgarnczarski
 object Main {
   def main(args: Array[String]): Unit = {
 
-    val glass = new Glass(1250, 1100, 16)
+    val glass = new Glass(2001, 1100, 8)
     println(glass.area)
     println(glass.dimensionsRatio)
 
