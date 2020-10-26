@@ -27,7 +27,11 @@ class GlassSurchargeDefiner(glass: Glass) {
     (glass.longerDimension > 4000 && glass.longerDimension <= 5000 &&
     glass.shorterDimension > 2000 && glass.shorterDimension <= 2400) ||
     (glass.longerDimension > 5000 && glass.longerDimension <= 6000 && glass.shorterDimension < 2000)
-  
+
+  private def conditionFor125: Boolean = (glass.longerDimension > 4000 && glass.longerDimension <= 5000 &&
+    glass.shorterDimension > 2400 && glass.shorterDimension <= 2700) ||
+    (glass.longerDimension > 5000 && glass.longerDimension <= 6000 &&
+    glass.shorterDimension > 2000 && glass.shorterDimension <= 2400)
 
 
 }
