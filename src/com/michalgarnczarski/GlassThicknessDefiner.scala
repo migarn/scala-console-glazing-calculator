@@ -4,12 +4,12 @@ class GlassThicknessDefiner(glass: Glass) {
 
   val thickness: Int = defineThickness
 
-  def defineThickness: Int = glass.spacerThickness match {
-    case x if x >= 16 => defineThicknessFor16
-    case x if x >= 12 => defineThicknessFor12
-    case x if x >= 9 => defineThicknessFor9
-    case x if x >= 6 => defineThicknessFor6
-    case _ => -1
+  def defineThickness: Int = {
+    if (glass.spacerThickness >= 16) defineThicknessFor16
+    else if (glass.spacerThickness >= 12) defineThicknessFor12
+    else if (glass.spacerThickness >= 9) defineThicknessFor9
+    else if (glass.spacerThickness >= 6) defineThicknessFor6
+    else -1
   }
 
   private def defineThicknessFor16: Int = {
