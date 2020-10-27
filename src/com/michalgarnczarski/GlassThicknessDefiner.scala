@@ -2,8 +2,6 @@ package com.michalgarnczarski
 
 class GlassThicknessDefiner(glass: Glass) {
 
-  val thickness: Int = defineThickness
-
   def defineThickness: Int = {
     if (glass.spacerThickness >= 16) defineThicknessFor16
     else if (glass.spacerThickness >= 12) defineThicknessFor12
