@@ -5,11 +5,26 @@ import scala.util.Try
 
 object InputScanner {
 
-  def scanPositiveInt(): Int = {
+  private def scanPositiveInt(): Int = {
 
     // If input is not Int or is negative return -1
 
     val input: Int = Try(readInt()).orElse(Try(-1)).get
     input.max(-1)
+  }
+
+  def scanPositiveIntWithInstruction(instruction: String): Int = {
+
+    var input: Int = 0
+
+    while (true) {
+      println(instruction)
+      input = scanPositiveInt()
+
+      if (input != -1) return input
+      println("\nWrong input!")
+    }
+
+    input
   }
 }
