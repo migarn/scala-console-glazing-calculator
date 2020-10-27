@@ -12,5 +12,8 @@ object Main {
     val glassThicknessDefiner = new GlassThicknessDefiner(glass)
     println(glassThicknessDefiner.thickness)
 
+    println("Podaj liczbę:")
+    println(InputScanner.scanPositiveInt())
+
   }
 }
