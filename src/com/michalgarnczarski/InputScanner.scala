@@ -16,13 +16,14 @@ object InputScanner {
   def scanPositiveIntWithInstruction(instruction: String): Int = {
 
     var input: Int = 0
+    var inLoop = true
 
-    while (true) {
+    while (inLoop) {
       println(instruction)
       input = scanPositiveInt()
 
-      if (input != -1) return input
-      println("\nWrong input!")
+      if (input != -1) inLoop = false
+      else println("\nWrong input!")
     }
 
     input
