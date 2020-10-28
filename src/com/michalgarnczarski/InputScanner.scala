@@ -5,7 +5,7 @@ import scala.util.Try
 
 object InputScanner {
 
-  private def scanPositiveInt(): Int = {
+  def scanPositiveInt(): Int = {
 
     // If input is not Int or is negative return -1
 
@@ -29,7 +29,24 @@ object InputScanner {
     input
   }
 
-  def scanIntForSelectionList(instruction: String, allowedInput: Int*) = {
+  def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
+    var input: Int = 0
+    var inLoop = true
+
+    val wrongInputValue: Int = allowedInput.map(x => x.abs).sum
+
+    // to delete
+    println("wrongInputValue: " + wrongInputValue)
+
+    while (inLoop) {
+      println(instruction)
+      input = Try(readInt()).orElse(Try(wrongInputValue)).get
+
+      if (input != wrongInputValue) inLoop = false
+      else println("\nWrong input!")
+    }
+
+    input
   }
 }
