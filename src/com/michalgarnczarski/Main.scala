@@ -3,6 +3,8 @@ package com.michalgarnczarski
 object Main {
   def main(args: Array[String]): Unit = {
 
+    InputScanner.scanIntForSelectionList("Type", 1,2,3,4)
+
     ConsoleApplication.run
 
 

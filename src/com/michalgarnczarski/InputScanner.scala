@@ -31,19 +31,15 @@ object InputScanner {
 
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
+    val wrongInputValue: Int = allowedInput.map(x => x.abs).sum
     var input: Int = 0
     var inLoop = true
-
-    val wrongInputValue: Int = allowedInput.map(x => x.abs).sum
-
-    // to delete
-    println("wrongInputValue: " + wrongInputValue)
 
     while (inLoop) {
       println(instruction)
       input = Try(readInt()).orElse(Try(wrongInputValue)).get
 
-      if (input != wrongInputValue) inLoop = false
+      if (allowedInput.contains(input)) inLoop = false
       else println("\nWrong input!")
     }
 
