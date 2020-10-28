@@ -1,7 +1,6 @@
 package com.michalgarnczarski
 
 import com.michalgarnczarski.InputScanner.scanPositiveIntWithInstruction
-import com.sun.org.glassfish.external.amx.AMXGlassfish
 
 object ConsoleApplication {
 
@@ -16,6 +15,10 @@ object ConsoleApplication {
       val glass = new Glass(width, height, spacerThickness)
       val thickness = new GlassThicknessDefiner(glass).defineThickness
       val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
+
+      println("Thickness: " + thickness + ", surcharge: " + surcharge)
+
+      // Wprowadzić ograniczenia dla gruości -1 i narzutu -1, zdefiniować opis
 
 
 
