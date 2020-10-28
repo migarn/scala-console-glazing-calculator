@@ -28,4 +28,8 @@ object InputScanner {
 
     input
   }
+
+  def scanIntForSelectionList(instruction: String, allowedInput: Int*) = {
+
+  }
 }
