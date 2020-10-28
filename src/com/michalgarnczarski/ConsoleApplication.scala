@@ -7,7 +7,10 @@ object ConsoleApplication {
   def run(): Unit = {
     println("\nThe application defines minimum thickness of glazing for given dimensions.")
 
-    while (true) {
+    var inLoop = true
+
+    while (inLoop) {
+
       val width: Int = scanPositiveIntWithInstruction("\nType width:")
       val height: Int = scanPositiveIntWithInstruction("\nType height:")
       val spacerThickness: Int = scanPositiveIntWithInstruction("\nType spacer thickness:")
@@ -23,6 +26,7 @@ object ConsoleApplication {
 
 
 
+      println("\nType:\n1 - to continue\n2 - to exit")
     }
 
 
