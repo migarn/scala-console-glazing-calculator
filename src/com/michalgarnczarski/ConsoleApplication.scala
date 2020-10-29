@@ -5,7 +5,7 @@ import com.michalgarnczarski.InputScanner.scanPositiveIntWithInstruction
 object ConsoleApplication {
 
   def run(): Unit = {
-    println("\nThe application defines minimum thickness of glazing for given dimensions.")
+    println("\nThe application defines minimum thickness of a glazing for given dimensions.")
 
     var inLoop = true
 
@@ -42,7 +42,7 @@ object ConsoleApplication {
       report.append("\n\t- spacer thickness: " + glass.spacerThickness + " mm.")
 
       if (thickness == -1 || surcharge == -1) {
-        report.append("\n\nPlease consult assumed parameters with glazing manufacturer!")
+        report.append("\n\nPlease consult assumed parameters with the glazing manufacturer!")
       }
 
       else {
@@ -65,6 +65,9 @@ object ConsoleApplication {
 
         else
           report.append("\n\nFor assumed parameters there is " + surcharge + "% surcharge for oversizing!")
+
+        if (glass.dimensionsRatio < 0.1)
+          report.append("\n\nAttention! Glazing dimensions ratio is lower than 1:10!")
       }
 
       report.append("\n\n-------------------------------------------")
