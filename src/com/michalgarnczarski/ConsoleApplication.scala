@@ -16,10 +16,9 @@ object ConsoleApplication {
       val spacerThickness: Int = scanPositiveIntWithInstruction("\nType spacer thickness:")
 
       val glass = new Glass(width, height, spacerThickness)
-      val thickness = new GlassThicknessDefiner(glass).defineThickness
-      val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
 
-      println("Thickness: " + thickness + ", surcharge: " + surcharge)
+      println(createReport(glass))
+
 
       // Wprowadzić ograniczenia dla gruości -1 i narzutu -1, zdefiniować opis
 
@@ -27,6 +26,21 @@ object ConsoleApplication {
 
 
       println("\nType:\n1 - to continue\n2 - to exit")
+    }
+
+    def createReport(glass: Glass): String = {
+      val thickness = new GlassThicknessDefiner(glass).defineThickness
+      val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
+
+      val report: StringBuilder = new StringBuilder
+
+      report.append("\n-------------------------------------------")
+      report.append("\nAssumed parameters:")
+      report.append("\n\t- dimensions: " + glass.width + " mm x " + glass.height + " mm,")
+      report.append("\n-------------------------------------------")
+
+
+      report.toString()
     }
 
 

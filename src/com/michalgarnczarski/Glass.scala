@@ -1,6 +1,6 @@
 package com.michalgarnczarski
 
-class Glass(width: Int, height: Int, val spacerThickness: Int) {
+class Glass(val width: Int, val height: Int, val spacerThickness: Int) {
 
   require(width > 0 && height > 0 && spacerThickness > 0)
 
