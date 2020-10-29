@@ -29,27 +29,47 @@ object ConsoleApplication {
     }
 
     def createReport(glass: Glass): String = {
+
       val thickness = new GlassThicknessDefiner(glass).defineThickness
       val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
 
       val report: StringBuilder = new StringBuilder
 
       report.append("\n-------------------------------------------")
-      report.append("\nAssumed parameters:")
+      report.append("\n\nAssumed parameters:")
       report.append("\n\t- dimensions: " + glass.width + " mm x " + glass.height + " mm,")
-      report.append("\n-------------------------------------------")
+      report.append("\n\t- area: " + glass.area + " m2,")
+      report.append("\n\t- spacer thickness: " + glass.spacerThickness + " mm.")
 
+      if (thickness == -1 || surcharge == -1) {
+        report.append("\n\nPlease consult assumed parameters with glazing manufacturer!")
+      }
 
+      else {
+        val vsgThickness: String = thickness match {
+          case 3 => "33.1"
+          case 4 => "33.1"
+          case 5 => "44.1"
+          case 6 => "55.1"
+          case 8 => "66.1"
+          case 10 => "88.1"
+          case 12 => "10.10.1"
+        }
+
+        report.append("\n\nFor assumed parameters minimum glazing width is:")
+        report.append("\n\t- " + thickness + " mm - for single glass,")
+        report.append("\n\t- " + vsgThickness + " - for laminated glass.")
+
+        if (surcharge == 0)
+          report.append("\n\nFor assumed parameters there is no surcharge for oversizing.")
+
+        else
+          report.append("\n\nFor assumed parameters there is " + surcharge + "% surcharge for oversizing!")
+      }
+
+      report.append("\n\n-------------------------------------------")
       report.toString()
     }
-
-
-
-
-
-
-
-
   }
 
 
