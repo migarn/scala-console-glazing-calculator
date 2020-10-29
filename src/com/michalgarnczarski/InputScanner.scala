@@ -15,6 +15,8 @@ object InputScanner {
 
   def scanPositiveIntWithInstruction(instruction: String): Int = {
 
+    // to comment
+
     var input: Int = 0
     var inLoop = true
 
@@ -31,7 +33,9 @@ object InputScanner {
 
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
-    val wrongInputValue: Int = allowedInput.map(x => x.abs).sum
+    // to comment
+
+    val wrongInputValue: Int = allowedInput.max + 1
     var input: Int = 0
     var inLoop = true
 
