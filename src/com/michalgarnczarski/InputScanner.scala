@@ -7,10 +7,10 @@ object InputScanner {
 
   def scanPositiveInt(): Int = {
 
-    // If the input is not an Int or is negative return -1
+    // If the input is not an Int or is not positive return 0
 
-    val input: Int = Try(readInt()).orElse(Try(-1)).get
-    input.max(-1)
+    val input: Int = Try(readInt()).orElse(Try(0)).get
+    input.max(0)
   }
 
   def scanPositiveIntWithInstruction(instruction: String): Int = {
@@ -25,7 +25,7 @@ object InputScanner {
       println(instruction)
       input = scanPositiveInt()
 
-      if (input != -1) inLoop = false
+      if (input != 0) inLoop = false
       else println("\nWrong input!")
     }
 
