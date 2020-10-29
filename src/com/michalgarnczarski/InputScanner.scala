@@ -7,7 +7,7 @@ object InputScanner {
 
   def scanPositiveInt(): Int = {
 
-    // If input is not Int or is negative return -1
+    // If the input is not an Int or is negative return -1
 
     val input: Int = Try(readInt()).orElse(Try(-1)).get
     input.max(-1)
@@ -15,7 +15,8 @@ object InputScanner {
 
   def scanPositiveIntWithInstruction(instruction: String): Int = {
 
-    // to comment
+    // The method prints an instruction and receives an positive Int.
+    // The method works in a loop until correct input is typed.
 
     var input: Int = 0
     var inLoop = true
@@ -33,7 +34,10 @@ object InputScanner {
 
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
-    // to comment
+    // The method prints an instruction and receives an Int limited by parameters.
+    // The method works in a loop until correct input is typed.
+
+    // wrongInputValue is an Int returned for incorrect inputs. It is an Int which unfailingly is not an allowedInput.
 
     val wrongInputValue: Int = allowedInput.max + 1
     var input: Int = 0
