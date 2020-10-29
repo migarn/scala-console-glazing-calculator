@@ -1,10 +1,13 @@
 package com.michalgarnczarski
 
-import com.michalgarnczarski.InputScanner.scanPositiveIntWithInstruction
+import com.michalgarnczarski.InputScanner._
 
 object ConsoleApplication {
 
+  // to comment and test
+
   def run(): Unit = {
+
     println("\nThe application defines minimum thickness of a glazing for given dimensions.")
 
     var inLoop = true
@@ -19,13 +22,8 @@ object ConsoleApplication {
 
       println(createReport(glass))
 
-
-      // Wprowadzić ograniczenia dla gruości -1 i narzutu -1, zdefiniować opis
-
-
-
-
-      println("\nType:\n1 - to continue\n2 - to exit")
+      val loopController: Int = scanIntForSelectionList("\nType:\n1 - to continue\n2 - to exit",1,2)
+      if (loopController == 2) inLoop = false
     }
 
     def createReport(glass: Glass): String = {
@@ -74,7 +72,4 @@ object ConsoleApplication {
       report.toString()
     }
   }
-
-
-
 }
