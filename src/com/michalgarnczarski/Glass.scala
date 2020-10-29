@@ -1,6 +1,7 @@
 package com.michalgarnczarski
 
 class Glass(width: Int, height: Int, val spacerThickness: Int) {
+  require(width > 0 && height > 0 && spacerThickness > 0)
 
   val longerDimension: Int = width.max(height)
   val shorterDimension: Int = width.min(height)
