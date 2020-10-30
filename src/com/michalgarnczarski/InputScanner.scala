@@ -15,8 +15,8 @@ object InputScanner {
 
   def scanPositiveIntWithInstruction(instruction: String): Int = {
 
-    // The method prints an instruction and receives an positive Int.
-    // The method works in a loop until correct input is typed.
+    // The function prints an instruction and receives an positive Int.
+    // The function works in a loop until correct input is typed.
 
     var input: Int = 0
     var inLoop = true
@@ -34,8 +34,8 @@ object InputScanner {
 
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
-    // The method prints an instruction and receives an Int limited by parameters.
-    // The method works in a loop until correct input is typed.
+    // The function prints an instruction and receives an Int limited by parameters.
+    // The function works in a loop until correct input is typed.
 
     // wrongInputValue is an Int returned for incorrect inputs. It is an Int which unfailingly is not an allowedInput.
 
