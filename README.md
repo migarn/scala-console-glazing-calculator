@@ -3,4 +3,4 @@ Glazing Calculator is a simple console application designed to determine minimum
 
 Application preview:
 
-![alt text](https://raw.githubusercontent.com/migarn/javaFX-glazing-calculator/master/GlazingCalculator.png)
+![alt text](https://raw.githubusercontent.com/migarn/scala-console-glazing-calculator/master/GlazingCalculator.png)
