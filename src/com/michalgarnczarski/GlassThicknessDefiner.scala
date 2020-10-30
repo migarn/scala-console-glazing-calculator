@@ -3,6 +3,9 @@ package com.michalgarnczarski
 class GlassThicknessDefiner(glass: Glass) {
 
   def defineThickness: Int = {
+
+    // Function defining glazing thickness depending on spacer thickness
+
     if (glass.spacerThickness >= 16) defineThicknessFor16
     else if (glass.spacerThickness >= 12) defineThicknessFor12
     else if (glass.spacerThickness >= 9) defineThicknessFor9
@@ -11,6 +14,9 @@ class GlassThicknessDefiner(glass: Glass) {
   }
 
   private def defineThicknessFor16: Int = {
+
+    // Auxiliary function defining glazing thickness for spacer thicker or equal to 16 mm
+
     if (glass.area <= 1.5 && glass.longerDimension <= 1500 && glass.dimensionsRatio > 1.0/6) 3
     else if (glass.area <= 3.35 && glass.longerDimension <= 2500 && glass.dimensionsRatio > 1.0/6) 4
     else if (glass.area <= 5 && glass.longerDimension <= 3300) 5
@@ -22,6 +28,9 @@ class GlassThicknessDefiner(glass: Glass) {
   }
 
   private def defineThicknessFor12: Int = {
+
+    // Auxiliary function defining glazing thickness for spacer thicker or equal to 12 mm
+
     if (glass.area <= 1.5 && glass.longerDimension <= 1500 && glass.dimensionsRatio > 1.0/6) 3
     else if (glass.area <= 3.35 && glass.longerDimension <= 2500 && glass.dimensionsRatio > 1.0/6) 4
     else if (glass.area <= 5 && glass.longerDimension <= 3300) 5
@@ -31,6 +40,9 @@ class GlassThicknessDefiner(glass: Glass) {
   }
 
   private def defineThicknessFor9: Int = {
+
+    // Auxiliary function defining glazing thickness for spacer thicker or equal to 9 mm
+
     if (glass.area <= 1.5 && glass.longerDimension <= 1500 && glass.dimensionsRatio > 1.0/6) 3
     else if (glass.area <= 2.5 && glass.longerDimension <= 2500 && glass.dimensionsRatio > 1.0/6) 4
     else if (glass.area <= 3.5 && glass.longerDimension <= 3000) 5
@@ -40,6 +52,9 @@ class GlassThicknessDefiner(glass: Glass) {
   }
 
   private def defineThicknessFor6: Int = {
+
+    // Auxiliary function defining glazing thickness for spacer thicker or equal to 6 mm
+
     if (glass.area <= 2 && glass.longerDimension <= 2000 && glass.dimensionsRatio > 1.0/6) 4
     else if (glass.area <= 2.5 && glass.longerDimension <= 2500) 5
     else if (glass.area <= 3 && glass.longerDimension <= 3000) 6
