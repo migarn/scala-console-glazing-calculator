@@ -4,7 +4,7 @@ class GlassThicknessDefiner(glass: Glass) {
 
   def defineThickness: Int = {
 
-    // Function defining glazing thickness depending on spacer thickness
+    // Function defining glazing thickness depending on the spacer thickness
 
     if (glass.spacerThickness >= 16) defineThicknessFor16
     else if (glass.spacerThickness >= 12) defineThicknessFor12

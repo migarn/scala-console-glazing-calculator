@@ -3,6 +3,9 @@ package com.michalgarnczarski
 class GlassSurchargeDefiner(glass: Glass) {
 
   def defineSurcharge: Int = {
+
+    // Function defining surcharge for oversizing depending on the glazing dimensions
+
     if (conditionFor0) 0
     else if (conditionFor50) 50
     else if (conditionFor75) 75
@@ -11,6 +14,8 @@ class GlassSurchargeDefiner(glass: Glass) {
     else if (conditionFor150) 150
     else -1
   }
+
+  // Auxiliary functions defining conditions for particular levels of surcharge
 
   private def conditionFor0: Boolean = glass.longerDimension <= 3000 && glass.shorterDimension <= 2400
 
