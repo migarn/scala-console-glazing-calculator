@@ -54,4 +54,20 @@ object InputScanner {
 
     input
   }
+
+  def scanIntForSelectionListRec(instruction: String, allowedInput: Int*): Int = {
+
+    println(instruction)
+
+    val wrongInputValue: Int = allowedInput.max + 1
+    val input: Int = Try(readInt()).orElse(Try(wrongInputValue)).get
+
+    if (allowedInput.contains(input))
+      input
+
+    else {
+      println("\nWrong input!")
+      scanIntForSelectionListRec(instruction, allowedInput: _*)
+    }
+  }
 }
