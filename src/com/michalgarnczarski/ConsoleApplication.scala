@@ -1,7 +1,6 @@
 package com.michalgarnczarski
 
 import com.michalgarnczarski.InputScanner._
-
 import scala.annotation.tailrec
 
 object ConsoleApplication {
