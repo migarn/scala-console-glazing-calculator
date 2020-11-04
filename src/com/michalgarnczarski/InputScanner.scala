@@ -33,31 +33,15 @@ object InputScanner {
     }
   }
 
+  @tailrec
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
     // Function printing an instruction and returning an Int limited by parameters.
-    // The function works in a loop until correct input is typed.
-
-    // wrongInputValue is an Int returned for incorrect inputs. It is an Int which unfailingly is not an allowedInput.
-
-    val wrongInputValue: Int = allowedInput.max + 1
-    var input: Int = 0
-    var inLoop = true
-
-    while (inLoop) {
-      println(instruction)
-      input = Try(readInt()).orElse(Try(wrongInputValue)).get
-
-      if (allowedInput.contains(input)) inLoop = false
-      else println("\nWrong input!")
-    }
-
-    input
-  }
-
-  def scanIntForSelectionListRec(instruction: String, allowedInput: Int*): Int = {
+    // The function works recursively until correct input is typed.
 
     println(instruction)
+
+    // wrongInputValue is an Int returned for incorrect inputs. It is an Int which unfailingly is not an allowedInput.
 
     val wrongInputValue: Int = allowedInput.max + 1
     val input: Int = Try(readInt()).orElse(Try(wrongInputValue)).get
@@ -67,7 +51,7 @@ object InputScanner {
 
     else {
       println("\nWrong input!")
-      scanIntForSelectionListRec(instruction, allowedInput: _*)
+      scanIntForSelectionList(instruction, allowedInput: _*)
     }
   }
 }
