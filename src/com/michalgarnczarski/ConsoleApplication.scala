@@ -27,6 +27,32 @@ object ConsoleApplication {
     }
   }
 
+  def runRec(): String = {
+
+    println("\nThe application defines minimum thickness of a glazing for given dimensions.")
+
+
+    def auxiliaryRun(controller: Int): String = {
+
+      if (controller == 2) "\nThe application has been terminated..."
+
+      else {
+        val width: Int = scanPositiveIntWithInstruction("\nType width:")
+        val height: Int = scanPositiveIntWithInstruction("\nType height:")
+        val spacerThickness: Int = scanPositiveIntWithInstruction("\nType spacer thickness:")
+
+        val glass = new Glass(width, height, spacerThickness)
+
+        println(createReport(glass))
+
+        val controller: Int = scanIntForSelectionList("\nType:\n1 - to continue\n2 - to exit",1,2)
+        auxiliaryRun(controller)
+      }
+    }
+
+    auxiliaryRun(1)
+  }
+
   private def createReport(glass: Glass): String = {
 
     // Auxiliary function creating report for given glazing parameters
