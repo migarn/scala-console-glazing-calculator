@@ -1,5 +1,6 @@
 package com.michalgarnczarski
 
+import scala.annotation.tailrec
 import scala.io.StdIn.readInt
 import scala.util.Try
 
@@ -13,26 +14,12 @@ object InputScanner {
     input.max(0)
   }
 
+  @tailrec
   def scanPositiveIntWithInstruction(instruction: String): Int = {
 
     // Function printing an instruction and returning an positive Int.
-    // The function works in a loop until correct input is typed.
+    // The function works recursively until correct input is typed.
 
-    var input: Int = 0
-    var inLoop = true
-
-    while (inLoop) {
-      println(instruction)
-      input = scanPositiveInt()
-
-      if (input != 0) inLoop = false
-      else println("\nWrong input!")
-    }
-
-    input
-  }
-
-  def scanPositiveIntWithInstructionRec(instruction: String): Int = {
     println(instruction)
 
     val input: Int = scanPositiveInt()
@@ -42,7 +29,7 @@ object InputScanner {
 
     else {
       println("\nWrong input!")
-      scanPositiveIntWithInstructionRec(instruction)
+      scanPositiveIntWithInstruction(instruction)
     }
   }
 
