@@ -2,36 +2,17 @@ package com.michalgarnczarski
 
 import com.michalgarnczarski.InputScanner._
 
+import scala.annotation.tailrec
+
 object ConsoleApplication {
 
-  def run(): Unit = {
+  def run(): String = {
 
     // Function launching console user interface
 
-    println("\nThe application defines minimum thickness of a glazing for given dimensions.")
+    // An auxiliary function working recursively until the application terminates.
 
-    var inLoop = true
-
-    while (inLoop) {
-
-      val width: Int = scanPositiveIntWithInstruction("\nType width:")
-      val height: Int = scanPositiveIntWithInstruction("\nType height:")
-      val spacerThickness: Int = scanPositiveIntWithInstruction("\nType spacer thickness:")
-
-      val glass = new Glass(width, height, spacerThickness)
-
-      println(createReport(glass))
-
-      val loopController: Int = scanIntForSelectionList("\nType:\n1 - to continue\n2 - to exit",1,2)
-      if (loopController == 2) inLoop = false
-    }
-  }
-
-  def runRec(): String = {
-
-    println("\nThe application defines minimum thickness of a glazing for given dimensions.")
-
-
+    @tailrec
     def auxiliaryRun(controller: Int): String = {
 
       if (controller == 2) "\nThe application has been terminated..."
@@ -50,12 +31,13 @@ object ConsoleApplication {
       }
     }
 
+    println("\nThe application defines minimum thickness of a glazing for given dimensions.")
     auxiliaryRun(1)
   }
 
   private def createReport(glass: Glass): String = {
 
-    // Auxiliary function creating report for given glazing parameters
+    // An auxiliary function creating report for given glazing parameters
 
     val thickness = new GlassThicknessDefiner(glass).defineThickness
     val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
