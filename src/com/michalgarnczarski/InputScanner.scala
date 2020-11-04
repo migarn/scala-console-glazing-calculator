@@ -32,6 +32,20 @@ object InputScanner {
     input
   }
 
+  def scanPositiveIntWithInstructionRec(instruction: String): Int = {
+    println(instruction)
+
+    val input: Int = scanPositiveInt()
+
+    if (input != 0)
+      input
+
+    else {
+      println("\nWrong input!")
+      scanPositiveIntWithInstructionRec(instruction)
+    }
+  }
+
   def scanIntForSelectionList(instruction: String, allowedInput: Int*): Int = {
 
     // Function printing an instruction and returning an Int limited by parameters.
