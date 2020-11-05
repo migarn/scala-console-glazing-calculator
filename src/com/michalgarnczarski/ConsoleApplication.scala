@@ -7,20 +7,14 @@ object ConsoleApplication {
 
   def run(): String = {
 
-    // Function launching console user interface
-
-    // An auxiliary function working recursively until the application terminates.
-
     @tailrec
     def auxiliaryRun(controller: Int): String = {
 
       if (controller == 2) "\nThe application has been terminated..."
-
       else {
         val width: Int = scanPositiveIntWithInstruction("\nType width:")
         val height: Int = scanPositiveIntWithInstruction("\nType height:")
         val spacerThickness: Int = scanPositiveIntWithInstruction("\nType spacer thickness:")
-
         val glass = new Glass(width, height, spacerThickness)
 
         println(createReport(glass))
@@ -36,11 +30,8 @@ object ConsoleApplication {
 
   private def createReport(glass: Glass): String = {
 
-    // An auxiliary function creating report for given glazing parameters
-
     val thickness = new GlassThicknessDefiner(glass).defineThickness
     val surcharge = new GlassSurchargeDefiner(glass).defineSurcharge
-
     val report: StringBuilder = new StringBuilder
 
     report.append("\n-------------------------------------------")
@@ -52,7 +43,6 @@ object ConsoleApplication {
     if (thickness == -1 || surcharge == -1) {
       report.append("\n\nPlease consult assumed parameters with the glazing manufacturer!")
     }
-
     else {
       val vsgThickness: String = thickness match {
         case 3 => "33.1"
@@ -70,7 +60,6 @@ object ConsoleApplication {
 
       if (surcharge == 0)
         report.append("\n\nFor assumed parameters there is no surcharge for oversizing.")
-
       else
         report.append("\n\nFor assumed parameters there is " + surcharge + "% surcharge for oversizing!")
 
