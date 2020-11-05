@@ -11,6 +11,7 @@ object ConsoleApplication {
     def auxiliaryRun(controller: Int): String = {
 
       if (controller == 2) "\nThe application has been terminated..."
+
       else {
         val width: Int = scanPositiveIntWithInstruction("\nType width:")
         val height: Int = scanPositiveIntWithInstruction("\nType height:")
@@ -43,6 +44,7 @@ object ConsoleApplication {
     if (thickness == -1 || surcharge == -1) {
       report.append("\n\nPlease consult assumed parameters with the glazing manufacturer!")
     }
+
     else {
       val vsgThickness: String = thickness match {
         case 3 => "33.1"
@@ -60,6 +62,7 @@ object ConsoleApplication {
 
       if (surcharge == 0)
         report.append("\n\nFor assumed parameters there is no surcharge for oversizing.")
+
       else
         report.append("\n\nFor assumed parameters there is " + surcharge + "% surcharge for oversizing!")
 

@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0cc7a18-bf97-4e0b-b065-8475cd4dc89c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,20 +30,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="68">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="986">
+              <caret line="58" column="73" lean-forward="true" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -58,10 +58,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Glass.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" />
-        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/GlassThicknessDefiner.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/GlassSurchargeDefiner.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" />
+        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
       </list>
     </option>
   </component>
@@ -229,13 +229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -245,8 +238,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="73" lean-forward="true" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
         </state>
       </provider>
     </entry>
